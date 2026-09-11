@@ -296,9 +296,11 @@ a:hover {
 .pixel-canvas__surface {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: block;
+  pointer-events: none;
 }
 .pixel-canvas__grid { display: none; }
 
@@ -343,10 +345,11 @@ a:hover {
 .pixel-canvas__overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   pointer-events: none;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--cream-0) 55%, transparent), transparent 18%, transparent 82%, color-mix(in srgb, var(--cream-0) 55%, transparent)),
-    linear-gradient(180deg, transparent 70%, color-mix(in srgb, var(--cream-0) 40%, transparent));
+    linear-gradient(90deg, color-mix(in srgb, var(--cream-0) 28%, transparent), transparent 14%, transparent 86%, color-mix(in srgb, var(--cream-0) 28%, transparent)),
+    linear-gradient(180deg, transparent 78%, color-mix(in srgb, var(--cream-0) 22%, transparent));
 }
 
 @keyframes pixel-pulse {
@@ -982,13 +985,14 @@ a:hover {
   border-top: 1px solid var(--hairline);
 }
 
-.footer-rail 
-.pixel-canvas__surface {
+.footer-rail .pixel-canvas__surface {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: block;
+  pointer-events: none;
 }
 .pixel-canvas__grid { display: none; }
 

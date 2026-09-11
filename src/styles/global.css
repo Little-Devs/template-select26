@@ -302,6 +302,8 @@ a:hover {
   display: block;
   pointer-events: none;
 }
+.pixel-canvas--live { pointer-events: auto; cursor: crosshair; }
+
 .pixel-canvas__grid { display: none; }
 
 .pixel-canvas__grid {
@@ -347,9 +349,37 @@ a:hover {
   inset: 0;
   z-index: 2;
   pointer-events: none;
+  /* light wash only — heavy cream was hiding glyph motion */
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--cream-0) 28%, transparent), transparent 14%, transparent 86%, color-mix(in srgb, var(--cream-0) 28%, transparent)),
-    linear-gradient(180deg, transparent 78%, color-mix(in srgb, var(--cream-0) 22%, transparent));
+    linear-gradient(90deg, color-mix(in srgb, var(--cream-0) 12%, transparent), transparent 10%, transparent 90%, color-mix(in srgb, var(--cream-0) 12%, transparent)),
+    linear-gradient(180deg, transparent 88%, color-mix(in srgb, var(--cream-0) 10%, transparent));
+}
+
+/* page motion (motion.js) */
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+.motion-reveal--in {
+  opacity: 1;
+  transform: none;
+}
+.motion-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.motion-hover:hover {
+  transform: translateY(-3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal,
+  .motion-hover {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 @keyframes pixel-pulse {
@@ -994,6 +1024,8 @@ a:hover {
   display: block;
   pointer-events: none;
 }
+.pixel-canvas--live { pointer-events: auto; cursor: crosshair; }
+
 .pixel-canvas__grid { display: none; }
 
 .pixel-canvas__grid {

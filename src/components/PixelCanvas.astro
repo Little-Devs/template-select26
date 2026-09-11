@@ -6,41 +6,14 @@ interface Props {
   label?: string;
 }
 const { tall = false, live = true, variant = 'hero', label = 'Decorative pixel canvas' } = Astro.props;
-
-const glyphs = ['·', '→', '←', '↑', '↓', '↗', '↘', '↙', '↖', '×', '+', ':', '/', 'A', 'B', 'C', 'D', 'E', 'F', 'G', '0', '1', 'x', '(', '[', ']', ')'];
-
-function cellClass(i: number, variant: string): string {
-  const n = i % 97;
-  if (variant === 'tickets') {
-    if (n % 11 === 0) return 'pixel-canvas__cell--deep';
-    if (n % 7 === 0) return 'pixel-canvas__cell--fill';
-    if (n % 5 === 0) return 'pixel-canvas__cell--g';
-    return 'pixel-canvas__cell';
-  }
-  // hero: denser left “bars”, arrow field right
-  const col = i % 48;
-  if (col < 14 && n % 3 === 0) return 'pixel-canvas__cell--fill';
-  if (col < 18 && n % 5 === 0) return 'pixel-canvas__cell--deep';
-  if (col > 36 && n % 13 === 0) return 'pixel-canvas__cell--ink';
-  if (n % 7 === 0) return 'pixel-canvas__cell--g';
-  return 'pixel-canvas__cell';
-}
-
-const rows = variant === 'tickets' ? 10 : 8;
-const cols = 48;
-const cells = Array.from({ length: rows * cols }, (_, i) => ({
-  g: glyphs[i % glyphs.length],
-  cls: cellClass(i, variant),
-}));
 ---
 <div
   class:list={['pixel-canvas', { 'pixel-canvas--tall': tall, 'pixel-canvas--live': live }]}
+  data-pixel-canvas={variant}
   role="img"
   aria-label={label}
 >
-  <div class="pixel-canvas__grid" aria-hidden="true">
-    {cells.map((c) => <span class:list={['pixel-canvas__cell', c.cls]}>{c.g}</span>)}
-  </div>
+  <canvas class="pixel-canvas__surface" aria-hidden="true"></canvas>
   <div class="pixel-canvas__overlay" aria-hidden="true"></div>
   <slot />
 </div>

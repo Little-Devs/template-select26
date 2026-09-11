@@ -7,7 +7,7 @@
   "subcategory": "event/conference",
   "repository": "https://github.com/Little-Devs/template-select26",
   "demoUrl": "https://select26.little.website/",
-  "previewImage": "",
+  "previewImage": "https://select26.little.website/preview.png",
   "techStack": {
     "framework": "Astro",
     "version": "5",

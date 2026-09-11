@@ -29,7 +29,7 @@
   ],
   "aesthetic": {
     "style": "Cream paper conference",
-    "description": "Warm cream paper background, ink typography, Supabase-like brand green accents, mono ticket chips, diagonal hatch canvas",
+    "description": "Warm cream paper background, ink typography, brand green accents, mono ticket chips, diagonal hatch canvas",
     "fonts": {
       "display": "Manrope",
       "sans": "Inter",
@@ -84,7 +84,7 @@
   "license": "MIT",
   "author": "Little-Devs",
   "createdAt": "2026-09-09",
-  "lastUpdated": "2026-09-09",
+  "lastUpdated": "2026-09-11",
   "tags": [
     "landing-page",
     "event",

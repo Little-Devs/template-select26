@@ -1,0 +1,56 @@
+---
+const speakers = [
+  { name: 'Paul Copplestone', role: 'CEO, Supabase', initials: 'PC' },
+  { name: 'Ant Wilson', role: 'CTO, Supabase', initials: 'AW' },
+  { name: 'Garry Tan', role: 'President & CEO, Y Combinator', initials: 'GT' },
+  { name: 'Parag Agrawal', role: 'Founder, Parallel · Former CEO, Twitter', initials: 'PA' },
+  { name: 'Michael Seibel', role: 'Partner Emeritus, Y Combinator', initials: 'MS' },
+  { name: 'Dalton Caldwell', role: 'Co-Founder, Standard Capital', initials: 'DC' },
+  { name: 'Thomas Dohmke', role: 'Co-Founder & CEO, Entire · Former CEO, GitHub', initials: 'TD' },
+  { name: 'Katelyn Lesse', role: 'Platform Engineering, Anthropic', initials: 'KL' },
+  { name: 'Angela Jiang', role: 'Head of Product, Anthropic', initials: 'AJ' },
+  { name: 'Sugu Sougoumarane', role: 'Multigres Lead, Supabase', initials: 'SS' },
+  { name: 'Deepthi Sigireddi', role: 'Head of Databases, Supabase', initials: 'DS' },
+  { name: 'To be announced', role: '', initials: 'TO BE ANNOUNCED', tba: true },
+];
+
+const rail = 'B C C C C B B B B B C C D E F G A → ↓ ↗ ← ↑ ↙ · × +';
+---
+<section class="section" id="speakers" aria-labelledby="speakers-title">
+  <div class="container">
+    <div class="pixel-rail" aria-hidden="true">
+      {rail.split(' ').map((c) => <span>{c}</span>)}
+    </div>
+    <h2 class="section__title" id="speakers-title">Speakers</h2>
+    <ul class="speakers-grid" role="list">
+      {
+        speakers.map((s) => (
+          <li class="speaker-card">
+            <div class:list={['avatar', { 'avatar--tba': s.tba }]} aria-hidden="true">
+              <span>{s.initials}</span>
+            </div>
+            <div>
+              {!s.tba && <h3>{s.name}</h3>}
+              {!s.tba && <p>{s.role}</p>}
+              {s.tba && <h3 class="visually-hidden">{s.name}</h3>}
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

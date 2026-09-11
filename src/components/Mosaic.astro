@@ -1,0 +1,16 @@
+---
+const panels = [
+  { caption: 'Main stage' },
+  { caption: 'Builders' },
+  { caption: 'Ask booth' },
+];
+---
+<section class="mosaic" aria-label="Event photo mosaic">
+  {
+    panels.map((p) => (
+      <div class="mosaic__panel">
+        <span class="mosaic__caption">{p.caption}</span>
+      </div>
+    ))
+  }
+</section>

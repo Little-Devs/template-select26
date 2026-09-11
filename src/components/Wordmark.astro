@@ -1,0 +1,13 @@
+---
+interface Props {
+  size?: 'md' | 'sm';
+  href?: string;
+}
+const { size = 'md', href = '#top' } = Astro.props;
+const cls = size === 'sm' ? 'wordmark wordmark--sm' : 'wordmark';
+---
+<a class={cls} href={href} aria-label="Select26 home">
+  <span class="wordmark__line">Supabase</span>
+  <span class="wordmark__line">Select</span>
+  <span class="wordmark__year">26</span>
+</a>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Speakers from '../components/Speakers.astro';
+import ValueProps from '../components/ValueProps.astro';
+import Agenda from '../components/Agenda.astro';
+import Tickets from '../components/Tickets.astro';
+import Mosaic from '../components/Mosaic.astro';
+import Sponsors from '../components/Sponsors.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Speakers />
+    <hr class="section-rule container" />
+    <ValueProps />
+    <hr class="section-rule container" />
+    <Agenda />
+    <Tickets />
+    <Mosaic />
+    <Sponsors />
+  </main>
+  <Footer />
+</BaseLayout>

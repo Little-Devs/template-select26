@@ -1,0 +1,97 @@
+{
+  "id": "select26",
+  "name": "Select26",
+  "version": "1.0.0",
+  "description": "Cream-paper Select26-style conference landing. Astro 5 SSG with 3-col header, pixel canvases, speakers, agenda tabs, Luma-style tickets CTA, mosaic, and sponsors.",
+  "category": "landing-page",
+  "subcategory": "event/conference",
+  "repository": "https://github.com/Little-Devs/template-select26",
+  "demoUrl": "https://select26.little.website/",
+  "previewImage": "",
+  "techStack": {
+    "framework": "Astro",
+    "version": "5",
+    "styling": "Hand CSS (design tokens)",
+    "scripting": "None"
+  },
+  "features": [
+    "Single-page event landing (Astro 5 SSG)",
+    "3-column info header (not conventional nav)",
+    "CSS pixel-art canvases (hero + tickets + footer rail)",
+    "Speakers grid with dithered CSS initials + TBA",
+    "Agenda tabs: Main Stage / Build Stage (CSS-only)",
+    "Luma-style Apply CTA (mailto demo)",
+    "Monochrome CSS photo mosaic",
+    "Sponsors bordered cards with headline badges",
+    "~1088px content width, thin borders, rectangular buttons",
+    "Skip link, reduced-motion, responsive 375/768/1280",
+    "Cloudflare Pages _headers (Steve bar CSP)"
+  ],
+  "aesthetic": {
+    "style": "Cream paper conference",
+    "description": "Warm cream paper background, ink typography, Supabase-like brand green accents, mono ticket chips, diagonal hatch canvas",
+    "fonts": {
+      "display": "Manrope",
+      "sans": "Inter",
+      "mono": "IBM Plex Mono (Departure Mono feel)"
+    },
+    "colors": {
+      "primary": "#3ECF8E",
+      "primaryName": "Brand green",
+      "accent": "#00482f",
+      "accentName": "Deep green",
+      "accentLight": "#94e6b7",
+      "accentLightName": "Light green",
+      "background": "#f8f3ef",
+      "backgroundName": "Cream paper",
+      "backgroundAlt": "#f4ece6",
+      "backgroundAltName": "Cream deep",
+      "ink": "#0b0e0d",
+      "inkName": "Ink",
+      "hairline": "#d3cfcb",
+      "hairlineName": "Hairline"
+    }
+  },
+  "sections": [
+    "3-col header (wordmark / info / Luma CTA)",
+    "Full-bleed pixel-art canvas",
+    "Speakers 6-col grid",
+    "Value props",
+    "Agenda tabs + schedule",
+    "Tickets CTA over canvas",
+    "Monochrome mosaic",
+    "Sponsors",
+    "Footer"
+  ],
+  "useCases": [
+    "Conference landing pages",
+    "Curated talks / summit days",
+    "Product launch events",
+    "Meetup or community day sites",
+    "Sponsor-ready event microsites"
+  ],
+  "customization": {
+    "difficulty": "easy",
+    "colorScheme": "src/styles/global.css CSS variables",
+    "typography": "System font stacks (Inter / Manrope / IBM Plex Mono first)",
+    "layout": "Astro components + CSS Grid / Flexbox"
+  },
+  "performance": {
+    "framework": "Astro 5 (SSG)",
+    "cssOnly": true,
+    "lighthouse": "target 90+"
+  },
+  "license": "MIT",
+  "author": "Little-Devs",
+  "createdAt": "2026-09-09",
+  "lastUpdated": "2026-09-09",
+  "tags": [
+    "landing-page",
+    "event",
+    "conference",
+    "astro",
+    "ssg",
+    "cream-paper",
+    "speakers"
+  ]
+}

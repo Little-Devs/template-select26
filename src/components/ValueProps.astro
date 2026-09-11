@@ -1,0 +1,45 @@
+---
+const props = [
+  {
+    title: "See what's next, first.",
+    body: "Get first-hand information about what's coming soon in Supabase. Meet the companies building the developer tools everyone's talking about. Learn about the latest in Postgres.",
+  },
+  {
+    title: 'Learn from builders.',
+    body: 'Every session highlights how real products get built. Fireside chats with well-known builders on the Main Stage. Feature deep dives on the Build Stage.',
+  },
+  {
+    title: 'Meet the Supabase team.',
+    body: 'Walk up to the Ask Supabase booth and talk to the engineers who build Supabase. Bring your hardest questions.',
+  },
+];
+---
+<section class="section section--tight" id="why" aria-labelledby="why-title">
+  <div class="container">
+    <h2 class="visually-hidden" id="why-title">Why attend</h2>
+    <div class="values-grid">
+      {
+        props.map((p) => (
+          <article class="value-card">
+            <h3>{p.title}</h3>
+            <p>{p.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

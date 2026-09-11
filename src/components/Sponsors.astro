@@ -1,0 +1,33 @@
+---
+const sponsors = [
+  { name: 'Vercel', headline: true },
+  { name: 'Resend', headline: false },
+  { name: 'Bolt', headline: false },
+  { name: 'Grafana Labs', headline: false },
+  { name: 'Stripe', headline: true },
+  { name: 'Doppler', headline: false },
+  { name: 'PostHog', headline: false },
+  { name: 'Announcing soon', tba: true },
+];
+---
+<section class="section" id="sponsors" aria-labelledby="sponsors-title">
+  <div class="container">
+    <h2 class="section__title" id="sponsors-title">Sponsors</h2>
+    <div class="sponsors-grid">
+      {
+        sponsors.map((s) =>
+          s.tba ? (
+            <div class="sponsor-card sponsor-card--tba" aria-label="Announcing soon">
+              <span>Announcing soon</span>
+            </div>
+          ) : (
+            <div class:list={['sponsor-card', { 'sponsor-card--headline': s.headline }]}>
+              {s.headline && <span class="sponsor-badge">Headline sponsor</span>}
+              {s.name}
+            </div>
+          )
+        )
+      }
+    </div>
+  </div>
+</section>

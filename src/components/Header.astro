@@ -1,0 +1,30 @@
+---
+import Wordmark from './Wordmark.astro';
+const applyHref = 'mailto:sales@little.cloud?subject=Select26%20application';
+---
+<header class="site-header" id="top">
+  <div class="container site-header__grid">
+    <div>
+      <Wordmark />
+    </div>
+
+    <div>
+      <p class="site-header__copy">
+        Curated day of talks by <a href="https://supabase.com" rel="noopener noreferrer">Supabase</a>
+        and the industry’s best builders.
+      </p>
+      <span class="header-arrow" aria-hidden="true">↓</span>
+      <p class="site-header__meta">
+        <strong>October 2nd</strong>
+        555 20th Street<br />
+        San Francisco
+      </p>
+    </div>
+
+    <div class="site-header__cta">
+      <p>In-person and application only.</p>
+      <p>$256 per person.</p>
+      <a class="btn" href={applyHref}>Apply via Luma</a>
+    </div>
+  </div>
+</header>

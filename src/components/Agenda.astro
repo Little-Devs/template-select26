@@ -1,0 +1,77 @@
+---
+const mainStage = [
+  { time: '8:30 – 9:30', title: 'Doors Open & Breakfast', who: '—' },
+  { time: '9:30 – 10:00', title: 'Opening Keynote', who: 'Paul Copplestone, CEO, Supabase' },
+  { time: '10:00 – 10:45', title: 'Fireside Chat', who: 'Garry Tan, Y Combinator' },
+  { time: '10:45 – 11:15', title: 'Building in Public', who: 'Ant Wilson, CTO, Supabase' },
+  { time: '11:15 – 12:00', title: 'Fireside Chat', who: 'Parag Agrawal, Parallel' },
+  { time: '12:00 – 1:15', title: 'Lunch', who: '—' },
+  { time: '1:15 – 2:00', title: 'The Database Frontier', who: 'Deepthi Sigireddi, Supabase' },
+  { time: '2:00 – 2:45', title: 'Fireside Chat', who: 'Thomas Dohmke, Entire' },
+  { time: '2:45 – 3:15', title: 'Break', who: '—' },
+  { time: '3:15 – 4:00', title: 'Platform Engineering', who: 'Katelyn Lesse, Anthropic' },
+  { time: '4:00 – 4:45', title: 'Fireside Chat', who: 'Michael Seibel · Dalton Caldwell' },
+  { time: '5:00 – 5:30', title: 'Closing Remarks', who: 'Supabase team' },
+  { time: '6:15 – 8:00', title: 'Closing Remarks & Party', who: 'All attendees' },
+];
+
+const buildStage = [
+  { time: '10:00 – 10:40', title: 'Postgres Deep Dive', who: 'Supabase Databases' },
+  { time: '10:50 – 11:30', title: 'Auth Patterns That Scale', who: 'Supabase Auth' },
+  { time: '11:40 – 12:20', title: 'Realtime at the Edge', who: 'Supabase Realtime' },
+  { time: '1:30 – 2:10', title: 'Multigres & Branching', who: 'Sugu Sougoumarane' },
+  { time: '2:20 – 3:00', title: 'Vectors & AI Tooling', who: 'Build Stage' },
+  { time: '3:20 – 4:00', title: 'Product Workshop', who: 'Angela Jiang, Anthropic' },
+  { time: '4:10 – 4:50', title: 'Ask Supabase Office Hours', who: 'Engineering team' },
+];
+---
+<section class="section" id="agenda" aria-labelledby="agenda-title">
+  <div class="container">
+    <div class="agenda-root">
+      <input class="agenda-switch" type="radio" name="agenda" id="tab-main" checked />
+      <input class="agenda-switch" type="radio" name="agenda" id="tab-build" />
+
+      <div class="agenda-bar">
+        <div class="agenda-bar__label" id="agenda-title">
+          Agenda <span class="arrow" aria-hidden="true">→</span>
+        </div>
+        <div class="agenda-tabs" role="tablist" aria-label="Stage">
+          <label for="tab-main">Main Stage</label>
+          <label for="tab-build">Build Stage</label>
+        </div>
+      </div>
+
+      <div class="agenda-panel" id="panel-main" role="tabpanel">
+        <table class="schedule">
+          <tbody>
+            {
+              mainStage.map((row) => (
+                <tr>
+                  <td>{row.time}</td>
+                  <td>{row.title}</td>
+                  <td>{row.who}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="agenda-panel" id="panel-build" role="tabpanel">
+        <table class="schedule">
+          <tbody>
+            {
+              buildStage.map((row) => (
+                <tr>
+                  <td>{row.time}</td>
+                  <td>{row.title}</td>
+                  <td>{row.who}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
